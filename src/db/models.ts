@@ -6,7 +6,7 @@ export interface IUser extends Document {
   email: string;
   password: string;
   sessionToken?: string;
-  role: 'Recruiter' | 'Candidate'; 
+  role: 'Recruiter' | 'Candidate';  
 }
 
 // Schema for the User model

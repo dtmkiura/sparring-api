@@ -18,9 +18,15 @@ const Login = async (req: Request, res: Response, next: NextFunction) => {
             res.status(401).json({ message: 'Verify your email and password' });
             return ; 
         }
+        
+        const token = await generateJWT({uid: tempUser.id , rol: tempUser.role });
 
-        const token = await generateJWT(tempUser.id);
-        res.status(200).json({ token });
+        res.status(200).json({ user: {
+            name: tempUser.name ,
+            email: tempUser.email,
+            token
+        } });
+        
         return  ; 
 
     } catch (error) {

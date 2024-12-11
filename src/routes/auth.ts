@@ -11,7 +11,8 @@ app.post('/register', [
     check('email').not().isEmpty().withMessage('Email is required'),
     check('email').isEmail().withMessage('Email is invalid'),
     check('password').not().isEmpty().withMessage('Password is required'),
-    check('password').isLength({ min: 6 }).withMessage('Password must be at least 6 characters long'),
+    // check('password').isLength({ min: 6 }).withMessage('Password must be at least 6 characters long'),
+    check('role').isIn(['Recruiter', 'Candidate']).withMessage('Role must be Recruiter or Candidate'),
     FieldValidator], Register)
 
 

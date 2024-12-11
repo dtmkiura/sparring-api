@@ -42,11 +42,11 @@ export const verifyJWT = async (req: Request, res: Response, next: NextFunction)
     }
 };
 
-export const generateJWT = (arg: string) => {
+export const generateJWT = (arg: Object) => {
     // This Method are thinking to recive the user ID and generate a JWT
     return new Promise((resolve, reject) => {
         try {
-            const token = jwt.sign({ uid: arg }, String(process.env.SECRETORPRIVATEKEY), {
+            const token = jwt.sign(arg, String(process.env.SECRETORPRIVATEKEY), {
                 expiresIn: process.env.TOKENEXPIRATION,
                 algorithm: 'HS256'
             })
