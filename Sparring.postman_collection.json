@@ -1,0 +1,179 @@
+{
+	"info": {
+		"_postman_id": "90cfc6da-d4a8-4a75-b851-cab45f383641",
+		"name": "Sparring",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20599905"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"user1@gmail.com\", \n    \"password\":\"kjkszpj\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/auth/login",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"user2\",\n    \"email\":\"user2@gmail.com\", \n    \"password\":\"kjkszpj\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/auth/register",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Test",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NzU3Zjg1ZTYzZWE4NGZjOWM0MGFlMmMiLCJpYXQiOjE3MzM4MjA2NDcsImV4cCI6MTczMzgyNDI0N30.u1rFjGSj9aEhnS0B4ROdRnzpoLEj4FZeD97Be1HPr58",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Examen 2\",\n    \"question\": \"Como manejar correctamete los estados en react\",\n    \"type\": \"code\",\n    \"tags\": [\n        \"React , HTML, JS\"\n    ],\n    \"solution\": \"Candela\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/test/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"test",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAll",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NzU3Zjg1ZTYzZWE4NGZjOWM0MGFlMmMiLCJpYXQiOjE3MzM4MjA2NDcsImV4cCI6MTczMzgyNDI0N30.u1rFjGSj9aEhnS0B4ROdRnzpoLEj4FZeD97Be1HPr58",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/test/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"test",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getOne",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NzU3Zjg1ZTYzZWE4NGZjOWM0MGFlMmMiLCJpYXQiOjE3MzM4MjA2NDcsImV4cCI6MTczMzgyNDI0N30.u1rFjGSj9aEhnS0B4ROdRnzpoLEj4FZeD97Be1HPr58",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/test/675802326a4ec726a89a8735",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"test",
+								"675802326a4ec726a89a8735"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteOne",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NzU3Zjg1ZTYzZWE4NGZjOWM0MGFlMmMiLCJpYXQiOjE3MzM4MjEzNTEsImV4cCI6MTczMzgyNDk1MX0.5UK5QD7UiENOFPR7jMVJsdVbGVFdNzYXtVwBqU1TprM",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/test/675802326a4ec726a89a8735",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"test",
+								"675802326a4ec726a89a8735"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
